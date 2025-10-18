@@ -1,0 +1,133 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+}
+
+.container{
+    background-color: rgb(50, 63, 63);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 70%;
+    min-width: 300px;
+    max-width: 600px;
+    margin-top: 50px;
+}
+.container h1{
+    font-family: cursive;
+    text-align: center;
+}
+.container ul{
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+
+#task{
+    width: 100%
+}
+
+.addBtn{
+    background-color: green;
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container li{
+    list-style-type: none;
+    margin: 5px 0;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease;
+    color: #ffffff;
+    height: 5rem;
+    margin: 10px 0;
+}
+.container li:nth-child(even){
+    background-color: rgb(64, 77, 77);
+    padding: 5px;
+    border-radius: 10px;
+}
+.container li:nth-child(odd){
+    background-color: rgb(89, 104, 104);
+    padding: 5px;
+    border-radius: 10px;
+}
+.container li.completed{
+    text-decoration: line-through;
+    color: lightgray;
+}
+.container label{
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 5px;
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background-color: rgb(64, 77, 77);
+    text-align: center;
+
+}
+.container input[type="text"]{
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+.completed{
+    text-decoration: line-through;
+    color: gray;
+    background-color: transparent;
+}
+.markDoneBtn{
+    background-color: orange;
+    color: white;
+    padding: 7px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+.deleteBtn{
+    background-color: red;
+    color: white;
+    padding: 7px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+.deleteBtn:hover{
+    background-color: rgb(104, 0, 0);
+}
+.markDoneBtn:hover{
+    background-color: rgb(204, 102, 0);
+}
+.addBtn:hover{
+    background-color: rgb(0, 71, 0);
+}
