@@ -1,4 +1,4 @@
-
+//Quiz questions, stored as objects in the questions array
 const questions = [
     {   id: 1,
         question: "I vilket landskap hittar du vattenfallet Njupeskär?",
@@ -60,8 +60,14 @@ const questionNumber = document.getElementById("question-number");
 const next = document.getElementById("submitBtn");
 const check = document.getElementById("checkAnswer");
 
+
+// Tracks which question the quiz is currently at
 let i = 0;
+
+// Tracks how many questions were answered correctly
 let correct = 0;
+
+// This functions sets the text and color of the DOM elements
 function setQuestion(){
     check.innerText = "";
     answer.forEach(button => {button.style.backgroundColor = 'rgb(0, 123, 255)'});
@@ -70,9 +76,11 @@ function setQuestion(){
     questionTitle.innerText = questions[i].question
 }
 
+
+// What happens when we click the button for next question
+// Also checks if have finished the quiz 
 function handleNextClick(){
         i++
-        console.log(i)
         if(i < questions.length){
             setQuestion();
         }else{
@@ -82,6 +90,10 @@ function handleNextClick(){
             next.removeEventListener("click", handleNextClick);
             }
         }
+
+// Checks if the user clicked on the correct answer
+// If the answer was correct = green button, otherwise red
+// Also displays in text if it was correct or not
 function checkAnswer(){
     answer.forEach(button => {
         button.addEventListener("click", function(){
@@ -98,6 +110,7 @@ function checkAnswer(){
 }
 
 
+// Initialize the states
 next.addEventListener("click", handleNextClick);
 checkAnswer();
 setQuestion();
