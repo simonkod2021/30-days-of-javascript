@@ -70,7 +70,10 @@ let correct = 0;
 // This functions sets the text and color of the DOM elements
 function setQuestion(){
     check.innerText = "";
-    answer.forEach(button => {button.style.backgroundColor = 'rgb(0, 123, 255)'});
+    answer.forEach(button => {
+    button.style.backgroundColor = 'rgba(0, 70, 145, 0.6)';
+    button.disabled = false;
+});
     answer.forEach((button, index) => {button.innerText = questions[i].answers[index]})
     questionNumber.innerText = "Fråga " + questions[i].id + " av 10"
     questionTitle.innerText = questions[i].question
@@ -97,6 +100,7 @@ function handleNextClick(){
 function checkAnswer(){
     answer.forEach(button => {
         button.addEventListener("click", function(){
+            answer.forEach(btn => btn.disabled = true);
             if(button.innerText === questions[i].correct){
                 correct ++
                 button.style.backgroundColor = 'green'

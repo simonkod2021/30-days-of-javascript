@@ -9,7 +9,7 @@ body {
     text-align: center;
     margin-top: 50px;
     color: #000000;
-    width: 50%;
+    width: 70%;
 }
 
 .quiz-container {
@@ -30,7 +30,6 @@ body {
     margin-bottom: 20px;
 }
 .answers-btn {
-    background-color: rgb(0, 123, 255);
     color: rgb(0, 0, 0);
     font-size: 1.5rem;
     text-decoration: solid;
@@ -42,6 +41,10 @@ body {
     width: 100%;
     transition: background-color 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+.answers-btn:hover {
+    color: white;
 }
 
 .next-question-btn {
@@ -54,4 +57,8 @@ body {
     font-size: 16px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+}
+.next-question-btn:hover {
+    background-color: #218838;
+    transform: scale(1.1);
 }
