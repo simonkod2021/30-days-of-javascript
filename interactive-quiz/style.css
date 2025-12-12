@@ -62,3 +62,17 @@ body {
     background-color: #218838;
     transform: scale(1.1);
 }
+
+@keyframes answerPop {
+    0% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.correct-anim {
+    animation: answerPop 0.35s ease-out;
+}
+
+.wrong-anim {
+    animation: answerPop 0.35s ease-out;
+}

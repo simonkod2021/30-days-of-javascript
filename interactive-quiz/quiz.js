@@ -59,6 +59,7 @@ const questionLabel = document.getElementById("question-label");
 const questionNumber = document.getElementById("question-number");
 const next = document.getElementById("submitBtn");
 const check = document.getElementById("checkAnswer");
+const scoreDisplay = document.getElementById("scoreCounter");
 
 
 // Tracks which question the quiz is currently at
@@ -71,11 +72,13 @@ let correct = 0;
 function setQuestion(){
     check.innerText = "";
     answer.forEach(button => {
-    button.style.backgroundColor = 'rgba(0, 70, 145, 0.6)';
+    button.style.backgroundColor = 'rgba(172, 172, 172, 1)';
     button.disabled = false;
+    button.classList.remove("correct-anim", "wrong-anim");
 });
     answer.forEach((button, index) => {button.innerText = questions[i].answers[index]})
     questionNumber.innerText = "Fråga " + questions[i].id + " av 10"
+    scoreDisplay.innerText = `Antal rätt: ${correct}`
     questionTitle.innerText = questions[i].question
 }
 
@@ -89,6 +92,7 @@ function handleNextClick(){
         }else{
             next.disabled = true;
             next.innerText = "Slut på quiz!"
+            scoreDisplay.innerText = "";
             check.innerText = "Du fick " + correct + " Poäng!"
             next.removeEventListener("click", handleNextClick);
             }
@@ -103,11 +107,19 @@ function checkAnswer(){
             answer.forEach(btn => btn.disabled = true);
             if(button.innerText === questions[i].correct){
                 correct ++
-                button.style.backgroundColor = 'green'
-                check.innerText = "Rätt svar!"
+                button.style.backgroundColor = 'rgba(163, 255, 77, 0.5)';
+                button.classList.add("correct-anim");
+                check.innerText = `Du svarade ${button.innerText} som var korrekt!`
             }else{
-                button.style.backgroundColor = 'red'
-                check.innerText = "Fel svar!"
+                button.style.backgroundColor = 'rgba(255, 34, 34, 0.5)';
+                button.classList.add("wrong-anim");
+                check.innerText = `Du svarade ${button.innerText} som var fel!`
+                answer.forEach(btn => {
+                    if(btn.innerText === questions[i].correct) {
+                        btn.style.backgroundColor = 'rgba(163, 255, 77, 0.5)';
+                        btn.classList.add("correct-anim");
+                    }
+                })
             }
         })
     })
