@@ -11,7 +11,13 @@
     <h1>Number guessing game!</h1>
     <label>Guess a number!</label>
     <input type="number" placeholder="Guess a number..." id="guessInput">
-    <button onclick="guessNumber()">Guess</button>
+    <button onclick="guessNumber();">Guess</button>
+    <div id="result" class="result">
+    </div>
+    <section class="instructions">
+        <h2>Instructions</h2>
+        <p>Guess a number between 1 and 100. If your guess is too high, you'll get a hint to guess lower. If your guess is too low, you'll get a hint to guess higher. Keep guessing until you find the correct number!</p> 
+    </section>
     </div>
     <script src="guess.js"></script>
 </body>
