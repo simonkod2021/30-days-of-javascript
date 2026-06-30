@@ -39,7 +39,7 @@ function userMakeChoice(){
    paper.addEventListener("click", function(){
     setTimeout(() => {
     resultWinner.classList.remove('animated')
-    }, 4000);
+    }, 400);
     let choice = "Inget valt ännu"
     choice = choices[2]
     const computerChoice = computerMakeChoice();
@@ -51,31 +51,31 @@ function userMakeChoice(){
 }
 function calculateWinner(a, b ){
    if(a == choices[0] && b == choices[0]){
-    return "User selected: " + choices[0] + " Computer selected: " + choices[0] + " That was a draw!"
+    return "User selected: " + a + " , The Computer selected: " + b + " That was a draw!"
    }
    if(a == choices[1] && b == choices[1]){
-    return "User selected: " + choices[1] + " Computer selected: " + choices[1] + " That was a draw!"
+    return "User selected: " + a + " , The Computer selected: " + b + " That was a draw!"
    }
    if(a == choices[2] && b == choices[2]){
-    return "User selected: " + choices[2] + " Computer selected: " + choices[2] + " That was a draw!"
+    return "User selected: " + a + " , The Computer selected: " + b + " That was a draw!"
    }
    if(a == choices[0] && b == choices[1]){
-    return "User selected: " + choices[0] + " Computer selected: " + choices[1] + " The user won!"
+    return "User selected: " + a + " , The Computer selected: " + b + " The user won!"
    }
    if(a == choices[1] && b == choices[2]){
-    return "User selected: " + choices[1] + " Computer selected: " + choices[2] + " The user won!"
+    return "User selected: " + a + " , The Computer selected: " + b + " The user won!"
    }
    if(a == choices[2] && b == choices[0]){
-    return "User selected: " + choices[2] + " Computer selected: " + choices[0] + " The user won!"
+    return "User selected: " + a + " , The Computer selected: " + b + " The user won!"
    }
    if(a == choices[0] && b == choices[2]){
-    return "User selected: " + choices[0] + " Computer selected: " + choices[2] + " The computer won!"
+    return "User selected: " + a + " , The Computer selected: " + b + " The computer won!"
    }
    if(a == choices[1] && b == choices[0]){
-    return "User selected: " + choices[1] + " Computer selected: " + choices[0] + " The computer won!"
+    return "User selected: " + a + " , The Computer selected: " + b + " The computer won!"
    }
    if(a == choices[2] && b == choices[1]){
-    return "User selected: " + choices[2] + " Computer selected: " + choices[1] + "The computer won!"
+    return "User selected: " + a + " , The Computer selected: " + b + " The computer won!"
    }
 }
 userMakeChoice();
