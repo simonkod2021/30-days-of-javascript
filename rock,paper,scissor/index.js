@@ -1,8 +1,6 @@
 const choices = ["Sten", "Sax","Påse"];
 
-const rock = document.getElementById('rock');
-const scissor = document.getElementById('scissor');
-const paper = document.getElementById('paper');
+const buttons = document.querySelectorAll('button')
 const resultWinner = document.getElementById('result')
 
 function computerMakeChoice(){
@@ -15,40 +13,24 @@ function computerMakeChoice(){
 function userMakeChoice(){
     let choice = "Inget valt ännu"
     console.log(choice);
-    rock.addEventListener("click", function(){
-    setTimeout(() => {
-    resultWinner.classList.remove('animated')
-    }, 4000);
-    choice = choices[0]
-    const computerChoice = computerMakeChoice();
-    const result = calculateWinner(choice, computerChoice)
-    resultWinner.textContent = result
+    buttons.forEach((button, index) =>{
+        button.addEventListener("click", function(){
+            choice = choices[index]
+            const computerChoice = computerMakeChoice();
+            const result = calculateWinner(choice, computerChoice)
+            resultWinner.textContent = result
+
+            resultWinner.classList.remove('animated');
+            void resultWinner.offsetWidth;
+            resultWinner.classList.add('animated');
+            setTimeout(() =>{
+                resultWinner.classList.remove('animated')
+            }, 5000);
+        })
+    })
     resultWinner.classList.add('animated')
-   })
-   scissor.addEventListener("click", function(){
-    setTimeout(() => {
-    resultWinner.classList.remove('animated')
-    }, 4000);
-    let choice = "Inget valt ännu"
-    choice = choices[1]
-    const computerChoice = computerMakeChoice();
-    const result = calculateWinner(choice, computerChoice)
-    resultWinner.textContent = result
-    resultWinner.classList.add('animated')
-   })
-   paper.addEventListener("click", function(){
-    setTimeout(() => {
-    resultWinner.classList.remove('animated')
-    }, 400);
-    let choice = "Inget valt ännu"
-    choice = choices[2]
-    const computerChoice = computerMakeChoice();
-    const result = calculateWinner(choice, computerChoice)
-    resultWinner.textContent = result
-    resultWinner.classList.add('animated')
-   })
-   return choice;
-}
+    return choice;
+   }
 function calculateWinner(a, b ){
    if(a == choices[0] && b == choices[0]){
     return "User selected: " + a + " , The Computer selected: " + b + " That was a draw!"

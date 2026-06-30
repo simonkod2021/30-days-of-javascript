@@ -1,11 +1,11 @@
 body {
-  font-family: roboto, sans-serif;
-  opacity: 0.7;
-  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+  background-image: url(https://images.unsplash.com/photo-1781902834597-25a42a64b3c9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-size: cover;
   margin: 0;
   padding: 0;
   color: #000000;
+  font-family: webkit-pictograph, sans-serif;
+  font-size: 1em;
 }
 .container {
   display: flex;
@@ -14,11 +14,9 @@ body {
   align-self: center;
   justify-content: center;
   height: 50vh;
-  width: 75vw;
+  width: 50vw;
   margin: auto;
-  margin-top: 25vh;
   text-align: center;
-  border: 5px outset #000000;
 }
 h1 {
   font-size: 36px;
@@ -32,21 +30,14 @@ h1::after {
   background-color: #000000;
   margin-top: 10px;
 }
-h1::backdrop {
-  backdrop-filter: blur(5px);
-}
 button {
-  padding: 10px 20px;
+  padding: 1.5em 2em;
+  width: 10em;
+  height: 5em;
   margin: 10px;
-  font-size: 16px;
+  font-size: .8em;
   cursor: pointer;
-}
-button::before {
-  content: '';
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  margin-right: 10px;
+  letter-spacing: .2em;
 }
 button#rock::before {
   content: '🥌';
@@ -68,22 +59,16 @@ button::highlight {
   background-color: #f0f0f0;
 }
 label {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-.result {
-  font-size: 18px;
-  padding: 10px;
-  margin: 0 auto;
-  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: .5em;
 }
 .animated {
   overflow: hidden;
+  border-right: .15em solid #000000;
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: .15em;
-  animation:
-  typing 3.5s steps(30, end)
+  animation: typing 5s steps(30, end)
 }
 
 @keyframes typing {
